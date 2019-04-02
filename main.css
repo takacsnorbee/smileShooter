@@ -1,0 +1,358 @@
+:root {
+	--shadowColor: rgb(234, 203, 25);
+}
+
+* {
+	box-sizing: border-box;
+	font-family: 'Baloo Chettan', cursive;
+}
+
+body {
+	text-align: center;
+	height: 100vh;
+	width: 100vw;
+	font-family: 'Baloo Chettan', cursive;
+}
+
+/*BATTLEFIELD*/
+
+#battlefieldWrapper, #gameOver {
+	height: 100%;
+	width: 100%;
+	padding: 10px;
+	padding-top: 60px;
+	background: url(pic/cells.jpg);
+	background-size: cover;
+	background-position: 50%;
+}
+
+#battlefield {
+	height: 800px;
+	width: 600px;
+	border: 5px dashed var(--shadowColor);
+	position: relative;
+	background: url(pic/game.jpg);
+	background-position: 55%;
+	background-size: cover;
+}
+
+audio {
+	position: absolute;
+	bottom: -80px;
+	left: 30px;
+}
+
+#battlefield h1 {
+	position: absolute;
+	top: -50px;
+	left: 0;
+	font-size: 2rem;
+	color: var(--shadowColor);
+	animation: mainH1 5s infinite;
+}
+
+#battlefield small {
+	position: absolute;
+	top: -40px;
+	left: 250px;
+	color: var(--shadowColor);
+}
+
+#hero, #princess {
+	height: 50px;
+	width: 50px;
+	position: absolute;
+	bottom: 10px;
+	left: 10px;
+}
+
+#hero {
+	background: url(pic/hero.jpg);
+	background-size: cover;
+	background-position: 40%;
+	background-repeat: no-repeat;
+}
+
+#princess {
+	background: url(pic/princess.png);
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+
+#bullet {
+	height: 12px;
+	width: 5px;
+	background: url(pic/bullet.png);
+	background-size: contain;
+	position: absolute;
+	bottom: 60px;
+	left: 10px;
+}
+
+#zombie1, #zombie2, #zombie3 {
+	height: 50px;
+	width: 50px;
+	position: absolute;
+	bottom: 730px;
+	left: 10px;
+	background: url(pic/zombie.jpg);
+	background-size: contain;
+}
+
+#fence {
+	height: 50px;
+	width: 590px;
+	position: absolute;
+	bottom: 190px;
+	left: 0px;
+	background: url(pic/fence.png);
+	background-size: contain;
+}
+
+#counter {
+	height: 50px;
+	width: 100px;
+	border: 2px solid var(--shadowColor);
+	position: absolute;
+	bottom: -80px;
+	right: 80px;
+	color: var(--shadowColor);
+	padding-top: 14px;
+}
+
+#btnStartGame, #btnMainMenu {
+	position: absolute;
+	height: 30px;
+	top: -50px;
+	right: 100px;
+	border-radius: 20px;
+}
+
+#btnMainMenu {
+	right: 10px;
+}
+
+/*MAIN MENU*/
+
+#mainMenu {
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	z-index: 1;
+	background: url(pic/cells.jpg);
+	background-size: cover;
+	background-position: 50%;
+	overflow: hidden;
+}
+
+#mainMenu h1 {
+	margin-top: 100px;
+	font-size: 70px;
+	color: var(--shadowColor);
+	animation: mainH1 5s infinite;
+}
+
+#col {
+	height: 400px;
+	width: 50px;
+	position: relative;
+	top: 150px;
+	left: 100px;
+	background-color: black;
+	animation: box 5s infinite;
+	z-index: 2;
+}
+
+#mainMenu button {
+	background: black;
+	color: yellow;
+	font-size: 20px;
+	text-align: left;
+	padding-left: 30px;
+	animation: box 5s infinite;
+}
+
+#mainMenu button:hover {
+	text-shadow: 
+		5px 5px 10px var(--shadowColor),
+		-5px -5px 10px var(--shadowColor),
+		 5px -5px 10px var(--shadowColor),
+		-5px  5px 10px var(--shadowColor);
+}
+
+#btn1 {
+	position: absolute;
+	top: 400px;
+	left: 150px;
+	height: 50px;
+	width: 200px;
+	border: none;
+}
+
+#btn2 {
+	position: absolute;
+	top: 500px;
+	left: 150px;
+	height: 50px;
+	width: 200px;
+	border: none;
+}
+
+#btn3 {
+	position: absolute;
+	top: 600px;
+	left: 150px;
+	height: 50px;
+	width: 200px;
+	border: none;
+}
+
+#mainMenu img {
+	height: 40px;
+	position: absolute;
+	left: 370px;
+	visibility: hidden;
+}
+
+#img1 {
+	top: 410px;
+}
+
+#img2 {
+	top: 510px;
+}
+
+#img3 {
+	top: 610px;
+}
+
+#letsStart {
+	height: 400px;
+	width: 200px;
+	background-color: rgba(77, 77, 74);
+	animation: box 5s infinite;
+	position: absolute;
+	left: 500px;
+	top: 750px;
+	transform: rotate(45deg);
+}
+
+h2 {
+	position: absolute;
+	right: 20px;
+	bottom: 40px;
+	font-size: 1.5rem;
+}
+
+/*MENU BLOCKS*/
+
+#rules, #gameControls, #about {
+	height: 250px;
+	width: 150px;
+	color: white;
+	position: absolute;
+	left: 430px;
+	top: 400px;
+	border: 2px dotted var(--shadowColor);
+	text-align: justify;
+	padding: 5px;
+	visibility: hidden;
+	line-height: 1.15rem;
+}
+
+/*GAME OVER*/
+
+#gameOver {
+	position: absolute;
+	z-index: 2;
+	visibility: hidden;
+}
+
+#gameOver h1 {
+	font-size: 5rem;
+	padding-top: 40%;
+	color: var(--shadowColor);
+	animation: mainH1 5s infinite;
+}
+
+#gameOver h3{
+	font-size: 2rem;
+	margin: 30px;
+	color: var(--shadowColor);
+}
+
+#gameOver small{
+	display: block;
+	font-size: 2rem;
+	margin: 30px;
+	color: var(--shadowColor);
+}
+
+#gameOver button {
+	margin: 50px 20px;
+	font-size: 1.5rem;
+	border-radius: 20px;
+}
+
+/*KEYFRAMES*/
+
+@keyframes mainH1 {
+  0% {
+    text-shadow: 
+			2px  2px 0 #000,
+		 -1px -1px 0 #000,  
+		  1px -1px 0 #000,
+		 -1px  1px 0 #000,
+		  1px  1px 0 #000,
+			0 0 0 rgba(0, 0, 0, 0);
+  } 
+	50% {
+    text-shadow: 
+			2px  2px 0 #000,
+		 -1px -1px 0 #000,  
+		  1px -1px 0 #000,
+		 -1px  1px 0 #000,
+		  1px  1px 0 #000,
+			5px  5px 15px var(--shadowColor),
+		 -5px  -5px 15px var(--shadowColor),
+		  5px  -5px 15px var(--shadowColor),
+		 -5px   5px 15px var(--shadowColor);
+  }
+  100% {
+    text-shadow: 
+			2px  2px 0 #000,
+		 -1px -1px 0 #000,  
+		  1px -1px 0 #000,
+		 -1px  1px 0 #000,
+		  1px  1px 0 #000,
+			0 0 0 rgba(0, 0, 0, 0);
+  }
+}
+
+@keyframes box {
+  0% {
+    box-shadow: 
+			0 0 0 rgba(0, 0, 0, 0);
+  } 
+	50% {
+    box-shadow: 
+			-5px  -5px 15px var(--shadowColor);
+		 
+  }
+  100% {
+    box-shadow: 
+			0 0 0 rgba(0, 0, 0, 0);
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+

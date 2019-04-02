@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>smileyShooter</title>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.css">
+		<link rel="stylesheet" href="main.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="https://fonts.googleapis.com/css?family=Baloo+Chettan" rel="stylesheet">
+	</head>
+	<body>
+		<section id="mainMenu">
+			<h1>Smiley Shooter</h1>
+			<img id="img1" src="pic/crosshair.png">
+			<img id="img2" src="pic/crosshair.png">
+			<img id="img3" src="pic/crosshair.png">
+			<div id="col"></div>
+			<button id="btn1">Rules</button>
+			<button id="btn2">Game Controls</button>
+			<button id="btn3">About</button>
+			<div id="letsStart" onclick="letsStartTheGame()"></div>
+			<h2 onclick="letsStartTheGame()">Let's Start</h2>
+			<div id="rules">The main goal is, to earn top scores by shooting down zombies. Do not shoot down the princess pls :) The game is over, if a zombie reach the fence, or the princess is killed. Good luck!</div>
+			<div id="gameControls">left arrow : hero moves left; <br><br> right arrow : hero moves right; <br><br> left ctrl : hero shoot; <br><br> Press p to pause the game, and press again to continue.</div>
+			<div id="about">Hi! <br><br>I have made this game, because I need practice coding in JavaScript. There is still some bugs. Do not be mad on me :) <br> thx! </div>
+		</section>
+		<section id="gameOver">
+			<h1>GAME OVER</h1>
+			<h3>Your score:</h3>
+			<small id="yourScore">0</small>
+			<button id="btnStartGame2" onclick="reset()" >Start Game</button>
+			<button id="btnMainMenu2" onclick="toMainMenu()">Main Menu</button>
+		</section>
+		<div id="battlefieldWrapper">
+			<section id="battlefield">
+				<audio controls autoplay loop>
+  				<source src="sound/bensound-epic.mp3" type="audio/mpeg">
+					Your browser does not support the audio element.
+				</audio>
+				<div id="counter">0</div>
+				<h1>Smile Shooter :) </h1>
+				<small>Save the Princess!!!</small>
+				<div id="hero"></div>
+				<div id="bullet"></div>
+				<div id="zombie1"></div>
+				<div id="zombie2"></div>
+				<div id="zombie3"></div>
+				<div id="fence"></div>
+				<div id="princess"></div>
+				<button id="btnStartGame" onclick="reset()" >Start Game</button>
+				<button id="btnMainMenu" onclick="toMainMenu()">Main Menu</button>
+			</section>
+		</div>
+	</body>
+	<script type="text/javascript" src="code.js"></script>
+	
+	<script>
+		//MENU
+		let menuImg1 = document.getElementById('img1')
+		let menuImg2 = document.getElementById('img2')
+		let menuImg3 = document.getElementById('img3')
+		let menubtn1 = document.getElementById('btn1')
+		let menubtn2 = document.getElementById('btn2')
+		let menubtn3 = document.getElementById('btn3')
+		
+		menubtn1.addEventListener("mouseover", function() {
+			menuImg1.style.visibility = "visible"
+		})
+		
+		menubtn1.addEventListener("mouseout", function() {
+			menuImg1.style.visibility = "hidden"
+		})
+		
+		menubtn2.addEventListener("mouseover", function() {
+			menuImg2.style.visibility = "visible"
+		})
+		
+		menubtn2.addEventListener("mouseout", function() {
+			menuImg2.style.visibility = "hidden"
+		})
+		
+		menubtn3.addEventListener("mouseover", function() {
+			menuImg3.style.visibility = "visible"
+		})
+		
+		menubtn3.addEventListener("mouseout", function() {
+			menuImg3.style.visibility = "hidden"
+		})
+		
+		//HIDE MENU
+		
+		let menu = document.getElementById('mainMenu')
+		let gameOver = document.getElementById('gameOver')
+		
+		function letsStartTheGame() {
+			menu.style.visibility = "hidden"
+		}
+		
+		function toMainMenu() {
+			menu.style.visibility = "visible"
+			gameOver.style.visibility = "hidden"
+		}
+	
+		
+		//START HOVER
+		let letsStart = document.getElementById('letsStart')
+		let letsStartH2 = document.querySelector('h2');
+		
+		letsStart.addEventListener('mouseover', function() {
+			letsStartH2.style.color = 'var(--shadowColor)'
+			letsStartH2.style.textShadow = '5px 5px 10px var(--shadowColor)'
+		})
+		
+		letsStartH2.addEventListener('mouseover', function() {
+			letsStartH2.style.color = 'var(--shadowColor)'
+			letsStartH2.style.textShadow = '5px 5px 10px var(--shadowColor)'
+		})
+		
+		letsStart.addEventListener('mouseout', function() {
+			letsStartH2.style.color = 'black'
+			letsStartH2.style.textShadow = 'none'
+		})
+		
+		//TOOLTIPS
+		let rules = document.getElementById('rules')
+		let gameControl = document.getElementById('gameControls')
+		let about = document.getElementById('about')
+		
+		menubtn1.addEventListener('mouseover', ()=> {
+				rules.style.visibility = 'visible'
+		})
+		
+		menubtn1.addEventListener('mouseout', ()=> {
+				rules.style.visibility = 'hidden'
+		})
+		
+		menubtn2.addEventListener('mouseover', ()=> {
+				gameControl.style.visibility = 'visible'
+		})
+		
+		menubtn2.addEventListener('mouseout', ()=> {
+				gameControl.style.visibility = 'hidden'
+		})
+		
+		menubtn3.addEventListener('mouseover', ()=> {
+				about.style.visibility = 'visible'
+		})
+		
+		menubtn3.addEventListener('mouseout', ()=> {
+				about.style.visibility = 'hidden'
+		})
+	
+	</script>
+</html>
