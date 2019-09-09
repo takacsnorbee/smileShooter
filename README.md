@@ -1,7 +1,7 @@
 ## Smile Shooter
 
 I have made this game to get practice. 
-I still have to fix some bugs...
+I still have to fix some bugs... I will make it, but until you need to resize the window at the beginning. Sorry :) 
 
 ## Built with
 
